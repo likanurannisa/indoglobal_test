@@ -11,7 +11,7 @@
  Target Server Version : 80012
  File Encoding         : 65001
 
- Date: 29/12/2020 09:21:08
+ Date: 30/12/2020 14:55:52
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,15 @@ CREATE TABLE `detail_transactions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of detail_transactions
+-- ----------------------------
+BEGIN;
+INSERT INTO `detail_transactions` VALUES (2, '2', '1', 5, 150000, '2020-12-30 06:53:57', '2020-12-30 06:53:57');
+INSERT INTO `detail_transactions` VALUES (3, '2', '3', 5, 200000, '2020-12-30 07:09:29', '2020-12-30 07:09:29');
+COMMIT;
 
 -- ----------------------------
 -- Table structure for detail_users
@@ -47,7 +55,15 @@ CREATE TABLE `detail_users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `gander` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of detail_users
+-- ----------------------------
+BEGIN;
+INSERT INTO `detail_users` VALUES (1, '1', 'admin', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `detail_users` VALUES (2, '2', 'employee', NULL, NULL, NULL, NULL, NULL, NULL);
+COMMIT;
 
 -- ----------------------------
 -- Table structure for groups
@@ -82,7 +98,16 @@ CREATE TABLE `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of products
+-- ----------------------------
+BEGIN;
+INSERT INTO `products` VALUES (1, 'Botol 250 ml', 30, 30000, NULL, NULL);
+INSERT INTO `products` VALUES (2, 'Piring', 30, 15000, NULL, NULL);
+INSERT INTO `products` VALUES (3, 'Gelas satu lusim', 20, 40000, NULL, NULL);
+COMMIT;
 
 -- ----------------------------
 -- Table structure for transactions
@@ -96,8 +121,16 @@ CREATE TABLE `transactions` (
   `user_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `status` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of transactions
+-- ----------------------------
+BEGIN;
+INSERT INTO `transactions` VALUES (2, 'TR3012202010', '2020-12-30', 350000, 1, '2020-12-30 06:36:50', '2020-12-30 07:09:29', '1');
+COMMIT;
 
 -- ----------------------------
 -- Table structure for users
